@@ -1,0 +1,19 @@
+Api creation tip:
+
+
+1. use version:
+    /api/v1/......
+
+2. use prefix:
+    /auth/login
+
+3. name for routes
+    /todo   /getTodo
+    /todo   /createTodo
+    /todo   /deleteTodo
+
+    .post()
+    .get()
+    .delete()
+    
+     
