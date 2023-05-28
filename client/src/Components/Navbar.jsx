@@ -3,20 +3,20 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-  <div class="relative w-full bg-">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-    <div class="inline-flex items-center space-x-2">
+  <div className="relative w-full bg-yellow-300">
+  <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+    <div className="inline-flex items-center space-x-2">
       
     <img alt="Qries" src="https://res.cloudinary.com/dlb4xmxr0/image/upload/v1685259903/logo_vfi9xq.png" width={80} height={50} />
       
-      <span class="font-bold rounded p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ">Drip Ecommerse</span>
+      <span className="font-bold rounded p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ">Drip Ecommerse</span>
     </div>
-    <div class="hidden lg:block">
-      <ul class="ml-12 inline-flex space-x-8">
+    <div className="hidden lg:block">
+      <ul className="ml-12 inline-flex space-x-8">
         <li>
           <a
             href="#"
-            class="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+            className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
             Home
             <span>
@@ -30,7 +30,7 @@ const Navbar = () => {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="ml-2 h-4 w-4"
+                className="ml-2 h-4 w-4"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -40,7 +40,7 @@ const Navbar = () => {
         <li>
           <a
             href="#"
-            class="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+            className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
             About
             <span>
@@ -54,7 +54,7 @@ const Navbar = () => {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="ml-2 h-4 w-4"
+                className="ml-2 h-4 w-4"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -64,7 +64,7 @@ const Navbar = () => {
         <li>
           <a
             href="#"
-            class="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+            className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
             Contact
             <span>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="ml-2 h-4 w-4"
+                className="ml-2 h-4 w-4"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -87,24 +87,22 @@ const Navbar = () => {
         </li>
       </ul>
     </div>
-    <div class="flex grow justify-end">
+    <div className="flex grow justify-end">
       <input
-        class="flex h-10 w-[250px] rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex h-10 w-[250px] rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
         type="text"
         placeholder="Serach"
       />
     </div>
-    <div class="ml-2 mt-2 hidden lg:block">
-      <span class="relative inline-block">
-        <img
-          class="h-10 w-10 rounded-full"
-          src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-          alt="Dan_Abromov"
-        />
-        <span class="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-600 ring-2 ring-white"></span>
+    <div className="ml-2 mt-2 hidden lg:block">
+      <span className="relative inline-block">
+      <button type="button" class="bg-gradient-to-r p-2 pr-3 pl-3 rounded mb-2 from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
+         Login
+      </button>
+        <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-600 ring-2 ring-white"></span>
       </span>
     </div>
-    <div class="ml-2 lg:hidden">
+    <div className="ml-2 lg:hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -115,7 +113,7 @@ const Navbar = () => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-6 w-6 cursor-pointer"
+        className="h-6 w-6 cursor-pointer"
       >
         <line x1="4" y1="12" x2="20" y2="12"></line>
         <line x1="4" y1="6" x2="20" y2="6"></line>
