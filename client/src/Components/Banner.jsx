@@ -27,6 +27,7 @@ const Banner = () => {
         })
       }
     </Carousel>
+    
   );
 };
 
