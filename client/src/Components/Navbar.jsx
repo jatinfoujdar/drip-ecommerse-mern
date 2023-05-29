@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+
 
 const Navbar = () => {
   return (
@@ -15,7 +17,7 @@ const Navbar = () => {
       <ul className="ml-12 inline-flex space-x-8">
         <li>
           <a
-            href="#"
+            href="/"
             className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
             Home
@@ -81,11 +83,13 @@ const Navbar = () => {
     </div>
     <div className="ml-2 mt-2 hidden lg:block">
       <span className="relative inline-block">
+      
       <button type="button" class="bg-gradient-to-r p-2 pr-3 pl-3 rounded mb-2 from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
          Login
       </button>
         <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-600 ring-2 ring-white"></span>
       </span>
+      
     </div>
     <div className="ml-2 lg:hidden">
       <svg
