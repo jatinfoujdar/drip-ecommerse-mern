@@ -39,9 +39,9 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="ml-2 h-4 w-4"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -63,9 +63,9 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="ml-2 h-4 w-4"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -86,7 +86,7 @@ const Navbar = () => {
       <span className="relative inline-block">
      
       <Link to="/login">
-      <button  type="button" class="bg-gradient-to-r p-2 pr-3 pl-3 rounded mb-2 from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
+      <button  type="button" className="bg-gradient-to-r p-2 pr-3 pl-3 rounded mb-2 from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
          Login
       </button>
        </Link>
@@ -103,9 +103,9 @@ const Navbar = () => {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className="h-6 w-6 cursor-pointer"
       >
         <line x1="4" y1="12" x2="20" y2="12"></line>
