@@ -1,8 +1,22 @@
 import React, { useState } from 'react'
+import axios from "axios";
 
 const Signup = () => {
 
-  // const[userPassword,setUserPassword] = useState("");
+  const[fullname,setFullName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const[userPassword,setUserPassword] = useState("");
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('/api/auth/signup', { fullname, userEmail, userPassword });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error.response.data);
+    }
+  };
 
 
   return (
@@ -123,7 +137,7 @@ const Signup = () => {
             Sign In
           </a>
         </p>
-        <form action="#" method="POST" className="mt-8">
+        <form action="#" method="POST" className="mt-8" onSubmit={handleSignup}>
           <div className="space-y-5">
             <div>
               <label htmlFor="name" className="text-base font-medium text-gray-900">
@@ -136,6 +150,8 @@ const Signup = () => {
                   type="text"
                   placeholder="Full Name"
                   id="name"
+                  value={fullname}
+                  onChange={(e)=> setFullName(e.target.value)}
                 />
               </div>
             </div>
@@ -150,6 +166,8 @@ const Signup = () => {
                   type="email"
                   placeholder="Email"
                   id="email"
+                  value={userEmail}
+                  onChange={(e)=> setUserEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -169,6 +187,8 @@ const Signup = () => {
                   type="password"
                   placeholder="Password"
                   id="password"
+                  value={userPassword}
+                  onChange={(e)=> setUserPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -235,7 +255,6 @@ const Signup = () => {
     </div>
   </div>
 </section>
-
 
   )
 }

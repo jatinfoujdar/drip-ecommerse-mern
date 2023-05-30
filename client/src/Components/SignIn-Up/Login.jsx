@@ -1,6 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
+import axios from 'axios';
+
 
 const Login = () => {
+
+  const [userEmail, setUserEmail] = useState("");
+  const[userPassword,setUserPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('/api/auth/login', {  userEmail, userPassword  });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error.response.data);
+    }
+  };
+
+
   return (
     <section className='container mx-auto mt-20 ' >
   <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -118,7 +136,7 @@ const Login = () => {
             Create a free account
           </a>
         </p>
-        <form action="#" method="POST" className="mt-8">
+        <form action="#" method="POST" className="mt-8" onSubmit={handleLogin}>
           <div className="space-y-5">
             <div>
               <label htmlFor="" className="text-base font-medium text-gray-900">
@@ -130,6 +148,8 @@ const Login = () => {
                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                   type="email"
                   placeholder="Email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -153,6 +173,8 @@ const Login = () => {
                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                   type="password"
                   placeholder="Password"
+                  value={userPassword}
+                  onChange={(e) => setUserPassword(e.target.value)}
                 />
               </div>
             </div>
