@@ -35,7 +35,11 @@ const userSchema = mongoose.Schema({
 );
 
 //encrypt Password
-
+userSchema.pre("save",async function(next){
+    if(!this.modified("password")) return next();
+    this.password =  await bcrypt.hash(this.password,10)
+    next();
+})
 
 
 export default mongoose.model("User",userSchema)
