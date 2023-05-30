@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Signup = () => {
+
+  // const[userPassword,setUserPassword] = useState("");
+
+
   return (
     
     <section className='container mx-auto mt-20'>
@@ -112,7 +116,7 @@ const Signup = () => {
         <p className="mt-2 text-base text-gray-600">
           Already have an account?{" "}
           <a
-            href="#"
+            href="/login"
             title=""
             className="font-medium text-black transition-all duration-200 hover:underline"
           >

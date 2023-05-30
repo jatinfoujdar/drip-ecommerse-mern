@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import AuthRoles from "../utils/authRoles.js";
+import bcrypt from "bcryptjs";
+import JWT from "jsonwebtoken";
+import crypto from "crypto";
 
 
 const userSchema = mongoose.Schema({
@@ -30,5 +33,9 @@ const userSchema = mongoose.Schema({
     timestamps: true
    }
 );
+
+//encrypt Password
+
+
 
 export default mongoose.model("User",userSchema)

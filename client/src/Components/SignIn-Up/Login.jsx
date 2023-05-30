@@ -111,7 +111,7 @@ const Login = () => {
         <p className="mt-2 text-sm text-gray-600">
           Don&#x27;t have an account?{" "}
           <a
-            href="#"
+            href="/signup"
             title=""
             className="font-semibold text-black transition-all duration-200 hover:underline"
           >

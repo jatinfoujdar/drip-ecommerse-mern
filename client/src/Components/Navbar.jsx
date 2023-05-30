@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import {Link} from "react-router-dom"
 
 
 
@@ -83,10 +84,13 @@ const Navbar = () => {
     </div>
     <div className="ml-2 mt-2 hidden lg:block">
       <span className="relative inline-block">
-      
-      <button type="button" class="bg-gradient-to-r p-2 pr-3 pl-3 rounded mb-2 from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
+     
+      <Link to="/login">
+      <button  type="button" class="bg-gradient-to-r p-2 pr-3 pl-3 rounded mb-2 from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
          Login
       </button>
+       </Link>
+      
         <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-600 ring-2 ring-white"></span>
       </span>
       
