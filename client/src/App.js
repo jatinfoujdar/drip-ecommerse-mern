@@ -6,17 +6,23 @@ import Signup from "./Components/SignIn-Up/Signup"
 import Error from './Components/Error';
 
 
+
 function App() {
   return (
     <Router>
-       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/*' element={<Error/>} />
-       </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <PrivateRoute path="/restricted" component={RestrictedComponent} />
+        <Route path="/*" element={<Error />} />
+      </Routes>
     </Router>
   );
 }
+
+const RestrictedComponent = () => {
+  return <h1>Restricted Component - Only accessible if logged in</h1>;
+};
 
 export default App;
