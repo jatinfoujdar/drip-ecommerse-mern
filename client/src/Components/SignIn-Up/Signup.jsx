@@ -13,7 +13,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/auth/signup', { fullname, userEmail, userPassword });
+      const response = await axios.post('/api/v1/signup', { fullname, userEmail, userPassword });
       console.log(response.data);
       //redirect to login page 
       navigate('/login');

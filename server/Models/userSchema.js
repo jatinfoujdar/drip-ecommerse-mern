@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import AuthRoles from "../utils/authRoles.js";
+import AuthRoles from "../utils/authRoles.js"
 import bcrypt from "bcryptjs";
 import JWT from "jsonwebtoken";
 import crypto from "crypto";
-import config from "../Config/index.js";
+import config from "../Config/index.js"
 
 
 const userSchema = mongoose.Schema({
@@ -30,7 +30,8 @@ const userSchema = mongoose.Schema({
     },
     forgotPasswordToken: String,
     forgotPasswordExpiry: Date, 
- },{
+ },
+    {
     timestamps: true
    }
 );

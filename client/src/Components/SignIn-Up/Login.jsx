@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/auth/login', {  userEmail, userPassword  });
+      const response = await axios.post('/api/v1/login', {  userEmail, userPassword  });
       console.log(response.data);
     } catch (error) {
       console.error(error.response.data);

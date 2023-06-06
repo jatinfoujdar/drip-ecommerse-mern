@@ -14,15 +14,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <PrivateRoute path="/restricted" component={RestrictedComponent} />
+        
         <Route path="/*" element={<Error />} />
       </Routes>
     </Router>
   );
 }
 
-const RestrictedComponent = () => {
-  return <h1>Restricted Component - Only accessible if logged in</h1>;
-};
+// const RestrictedComponent = () => {
+//   return <h1>Restricted Component - Only accessible if logged in</h1>;
+// };
 
 export default App;
