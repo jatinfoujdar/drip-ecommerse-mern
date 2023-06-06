@@ -1,4 +1,4 @@
-import User from "../Models/userSchema";
+import User from "../Models/userSchema.js";
 
 // Register a new user
 const signupUser = async (req, res) => {
@@ -10,6 +10,8 @@ const signupUser = async (req, res) => {
     res.status(500).json({ error: "Failed to register user" });
   }
 };
+
+
 
 // Login user
 const loginUser = async (req, res) => {
@@ -34,3 +36,6 @@ const loginUser = async (req, res) => {
 };
 
 export { signupUser, loginUser };
+
+
+

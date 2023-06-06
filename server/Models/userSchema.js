@@ -23,47 +23,47 @@ const userSchema = mongoose.Schema({
         minLength: [8,"Password must be atleast than 8 char"],
         select: false
     },
-    role:{
-        type: String,
-        enum: Object.values(AuthRoles),
-        default: AuthRoles.USER
-    },
-    forgotPasswordToken: String,
-    forgotPasswordExpiry: Date, 
+    // role:{
+    //     type: String,
+    //     enum: Object.values(AuthRoles),
+    //     default: AuthRoles.USER
+    // },
+    // forgotPasswordToken: String,
+    // forgotPasswordExpiry: Date, 
  },
     {
     timestamps: true
    }
 );
 
-//encrypt Password - hooks(pre)
-userSchema.pre("save",async function(next){
-    if(!this.isModified("password")) return next();
-    this.password =  await bcrypt.hash(this.password,10)
-    next();
-})
+// //encrypt Password - hooks(pre)
+// userSchema.pre("save",async function(next){
+//     if(!this.isModified("password")) return next();
+//     this.password =  await bcrypt.hash(this.password,10)
+//     next();
+// })
 
-//add more features directly to your schema
+// //add more features directly to your schema
 
-userSchema.method = {
-    //compare password
-    comparePassword: async function(entredPassword){
-        return await bcrypt.compare(entredPassword,this.password)
-    },
-    // generate JWT Token
-    getJwtToken: function(){
-        return JWT.sign(
-            {
-                _id: this._id,
-                role: this.role
-            },
-            config.JWT_SECRET,
-            {
-                expiresIn: config.JWT_EXPIRY
-            }
-        )
-    }
-}
+// userSchema.method = {
+//     //compare password
+//     comparePassword: async function(entredPassword){
+//         return await bcrypt.compare(entredPassword,this.password)
+//     },
+//     // generate JWT Token
+//     getJwtToken: function(){
+//         return JWT.sign(
+//             {
+//                 _id: this._id,
+//                 role: this.role
+//             },
+//             config.JWT_SECRET,
+//             {
+//                 expiresIn: config.JWT_EXPIRY
+//             }
+//         )
+//     }
+// }
 
 
 export default mongoose.model("User",userSchema)
