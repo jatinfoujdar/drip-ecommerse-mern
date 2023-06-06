@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import AuthRoles from "../utils/authRoles.js"
-import bcrypt from "bcryptjs";
-import JWT from "jsonwebtoken";
-import crypto from "crypto";
-import config from "../Config/index.js"
+// import AuthRoles from "../utils/authRoles.js"
+// import bcrypt from "bcryptjs";
+// import JWT from "jsonwebtoken";
+// import crypto from "crypto";
+// import config from "../Config/index.js"
 
 
 const userSchema = mongoose.Schema({
@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema({
     password:{
         type: String,
         required: [true,"Password is required"],
-        minLength: [8,"Password must be atleast than 8 char"],
+        minLength: [8,"Password must be atleast  8 char"],
         select: false
     },
     // role:{
