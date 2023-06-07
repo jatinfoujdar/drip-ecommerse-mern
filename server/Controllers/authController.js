@@ -36,9 +36,7 @@ const loginUser = async (req, res) => {
 
  const logoutUser = async (req, res) => {
   try {
-    // Clear the session (if you're using sessions)
-    req.session.destroy();
-
+ 
     // Remove tokens from the user (if you're using tokens)
     const user = req.user;
     user.tokens = [];

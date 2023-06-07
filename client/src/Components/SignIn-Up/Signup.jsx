@@ -7,11 +7,12 @@ const Signup = () => {
   const[fullname,setFullName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const[userPassword,setUserPassword] = useState("");
+  
   const navigate = useNavigate();
+
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post('/api/v1/signup', { fullname, userEmail, userPassword });
       console.log(response.data);
