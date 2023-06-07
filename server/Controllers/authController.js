@@ -11,8 +11,6 @@ const signupUser = async (req, res) => {
   }
 };
 
-
-
 // Login user
 const loginUser = async (req, res) => {
   try {
@@ -28,7 +26,7 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ error: "Invalid password" });
     }
     // Generate JWT token
-    const token = user.getJwtToken();
+    const token = user.generateJwtToken();
     res.status(200).json({ token });
   } catch (error) {
     res.status(500).json({ error: "Failed to login user" });
@@ -36,6 +34,3 @@ const loginUser = async (req, res) => {
 };
 
 export { signupUser, loginUser };
-
-
-
