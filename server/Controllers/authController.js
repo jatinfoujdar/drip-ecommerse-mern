@@ -33,4 +33,28 @@ const loginUser = async (req, res) => {
   }
 };
 
-export { signupUser, loginUser };
+
+ const logoutUser = async (req, res) => {
+  try {
+    // Clear the session (if you're using sessions)
+    req.session.destroy();
+
+    // Remove tokens from the user (if you're using tokens)
+    const user = req.user;
+    user.tokens = [];
+
+    // Save the user with updated tokens
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Logged out successfully"
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to logout user" });
+  }
+};
+
+
+
+export { signupUser, loginUser , logoutUser};
