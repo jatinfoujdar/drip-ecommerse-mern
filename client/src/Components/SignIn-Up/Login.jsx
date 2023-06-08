@@ -1,25 +1,34 @@
 import React,{useState} from 'react'
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
 
-  const [userEmail, setUserEmail] = useState("");
-  const[userPassword,setUserPassword] = useState("");
+  const[email, setEmail] = useState("");
+  const[password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/v1/login', {  userEmail, userPassword  });
-      console.log(response.data);
+      const response = await axios.post('/api/v1/login', {  email, password  });
+    
+      if (response.status === 200) {
+        navigate("/");
+        alert("Register Successful")
+    }
     } catch (error) {
+      toast.error("Something went wrong")
       console.error(error.response.data);
     }
   };
 
 
   return (
+    <>
+    <ToastContainer/>
     <section className='container mx-auto mt-20 ' >
   <div className="grid grid-cols-1 lg:grid-cols-2">
     <div className="relative flex items-end px-4 pb-10 pt-60 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">
@@ -148,8 +157,8 @@ const Login = () => {
                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                   type="email"
                   placeholder="Email"
-                  value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -173,8 +182,8 @@ const Login = () => {
                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                   type="password"
                   placeholder="Password"
-                  value={userPassword}
-                  onChange={(e) => setUserPassword(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -241,7 +250,7 @@ const Login = () => {
     </div>
   </div>
 </section>
-
+</>
   )
 }
 

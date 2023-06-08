@@ -16,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/v1/signup', { name, email, password });
-      console.log(response.data);
+      // console.log(response.data);
 
       if (response.status === 200) {
         navigate("/login");
