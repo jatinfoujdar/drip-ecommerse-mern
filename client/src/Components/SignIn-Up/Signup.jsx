@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import axios from "axios";
+import { ToastContainer, toast} from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
-  const[fullname,setFullName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const[userPassword,setUserPassword] = useState("");
+  const[name, setName] = useState("");
+  const[email, setEmail] = useState("");
+  const[password, setPassword] = useState("");
   
   const navigate = useNavigate();
 
@@ -14,18 +15,23 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/v1/signup', { fullname, userEmail, userPassword });
+      const response = await axios.post('/api/v1/signup', { name, email, password });
       console.log(response.data);
-      //redirect to login page 
-      navigate('/login');
+
+      if (res.status === 200) {
+        navigate("/login");
+        alert("Register Successful")
+    }
     } catch (error) {
+      toast.error("Invalid Credincials")
       console.error(error.response.data);
     }
   };
 
 
   return (
-    
+    <>
+    <ToastContainer />
     <section className='container mx-auto mt-20'>
   <div className="grid grid-cols-1 lg:grid-cols-2">
     <div className="relative flex items-end px-4 pb-10 pt-60 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">
@@ -156,7 +162,7 @@ const Signup = () => {
                   placeholder="Full Name"
                   id="name"
                   value={fullname}
-                  onChange={(e)=> setFullName(e.target.value)}
+                  onChange={(e)=> setName(e.target.value)}
                 />
               </div>
             </div>
@@ -171,8 +177,8 @@ const Signup = () => {
                   type="email"
                   placeholder="Email"
                   id="email"
-                  value={userEmail}
-                  onChange={(e)=> setUserEmail(e.target.value)}
+                  value={email}
+                  onChange={(e)=> setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -192,8 +198,8 @@ const Signup = () => {
                   type="password"
                   placeholder="Password"
                   id="password"
-                  value={userPassword}
-                  onChange={(e)=> setUserPassword(e.target.value)}
+                  value={password}
+                  onChange={(e)=> setPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -260,7 +266,7 @@ const Signup = () => {
     </div>
   </div>
 </section>
-
+</>
   )
 }
 
