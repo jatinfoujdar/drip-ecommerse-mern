@@ -18,7 +18,7 @@ const Signup = () => {
       const response = await axios.post('/api/v1/signup', { name, email, password });
       console.log(response.data);
 
-      if (res.status === 200) {
+      if (response.status === 200) {
         navigate("/login");
         alert("Register Successful")
     }
@@ -161,7 +161,7 @@ const Signup = () => {
                   type="text"
                   placeholder="Full Name"
                   id="name"
-                  value={fullname}
+                  value={name}
                   onChange={(e)=> setName(e.target.value)}
                 />
               </div>
