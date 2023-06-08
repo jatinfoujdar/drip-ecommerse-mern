@@ -11,7 +11,7 @@ const Banner = () => {
   }
 
   return (
-    <Carousel showThumbs={false} infiniteLoop>
+    <Carousel showThumbs={false} infiniteLoop autoPlay interval={2000}>
       {
         bannerData.map((data, index) => {
           // Check if data object has url property

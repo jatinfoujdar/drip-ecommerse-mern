@@ -4,6 +4,7 @@ import Home from "./Components/Home"
 import Login from "./Components/SignIn-Up/Login"
 import Signup from "./Components/SignIn-Up/Signup"
 import Error from './Components/Error';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

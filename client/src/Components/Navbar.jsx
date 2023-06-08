@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom"
-
+import {FaShoppingCart } from "react-icons/fa" 
 
 
 const Navbar = () => {
+
+  const[isLoggedIn,setIsLoggedIn] = useState(false)
+
+
+const handleLogout = () => {
+  setIsLoggedIn(false)
+}
+
+
+
   return (
     <div>
   <div className="relative w-full bg-yellow-300">
@@ -54,23 +64,8 @@ const Navbar = () => {
             href="#"
             className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
-            Cart
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="ml-2 h-4 w-4"
-              >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
+            <FaShoppingCart size={20}/>
+            
           </a>
         </li>
       </ul>
