@@ -7,6 +7,7 @@ import Error from './Components/Error';
 import 'react-toastify/dist/ReactToastify.css';
 import CartView from './Components/Cart/CartView';
 import CartPage from './Components/Cart/CartPage';
+import Checkout from './Components/Cart/Checkout';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/cartview" element={<CartView />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<Checkout />} />
         
         <Route path="/*" element={<Error />} />
       </Routes>
