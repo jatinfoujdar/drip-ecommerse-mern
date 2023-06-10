@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 
@@ -141,13 +141,13 @@ const Login = () => {
         </h2>
         <p className="mt-2 text-sm text-gray-600">
           Don&#x27;t have an account?{" "}
-          <a
-            href="/signup"
+          <Link
+            to="/signup"
             title=""
             className="font-semibold text-black transition-all duration-200 hover:underline"
           >
-            Create a free account
-          </a>
+            Create a Link free account
+          </Link>
         </p>
         <form action="#" method="POST" className="mt-8" onSubmit={handleLogin}>
           <div className="space-y-5">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios";
 import { ToastContainer, toast} from 'react-toastify'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -140,13 +140,13 @@ const Signup = () => {
         </h2>
         <p className="mt-2 text-base text-gray-600">
           Already have an account?{" "}
-          <a
-            href="/login"
+          <Link
+            to="/login"
             title=""
             className="font-medium text-black transition-all duration-200 hover:underline"
           >
             Sign In
-          </a>
+          </Link>
         </p>
         <form action="#" method="POST" className="mt-8" onSubmit={handleSignup}>
           <div className="space-y-5">

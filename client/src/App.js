@@ -5,6 +5,7 @@ import Login from "./Components/SignIn-Up/Login"
 import Signup from "./Components/SignIn-Up/Signup"
 import Error from './Components/Error';
 import 'react-toastify/dist/ReactToastify.css';
+import Cart from './Components/Cart/Cart';
 
 
 
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/cart" element={<Cart />} />
+
         
         <Route path="/*" element={<Error />} />
       </Routes>
