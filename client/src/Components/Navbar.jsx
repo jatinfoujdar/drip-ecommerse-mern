@@ -22,7 +22,7 @@ const handleLogout = () => {
       
     <img alt="Qries" src="https://res.cloudinary.com/dlb4xmxr0/image/upload/v1685259903/logo_vfi9xq.png" width={80} height={50} />
       
-      <span className="font-bold rounded p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ">Drip Ecommerse</span>
+     <Link to="/"> <button className="font-bold rounded p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ">Drip Ecommerse</button></Link>
     </div>
     <div className="hidden lg:block">
       <ul className="ml-12 inline-flex space-x-8">
@@ -60,13 +60,15 @@ const handleLogout = () => {
           </a>
         </li>
         <li>
-          <a
+          <Link to="/cart">
+          <button
             href="#"
             className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
             <FaShoppingCart size={20}/>
             
-          </a>
+          </button>
+          </Link>
         </li>
       </ul>
     </div>
