@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Error = () => {
   return (
@@ -13,7 +14,7 @@ const Error = () => {
       Sorry, the page you are looking for doesn&#x27;t exist or has been moved.
     </p>
     <div className="mt-6 flex items-center space-x-3">
-      <button
+      <Link to="/" 
         type="button"
         className="inline-flex items-center rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
       >
@@ -33,7 +34,7 @@ const Error = () => {
           <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
         Go back
-      </button>
+      </Link>
       <button
         type="button"
         className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
