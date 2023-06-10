@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const products = [
@@ -237,7 +238,15 @@ const Cart = () => {
                       </div>
                     </div>
 
-                    <div className="mt-10 flex justify-end border-t border-gray-200 pt-6">
+                    <div className="mt-10 flex justify-end border-t  border-gray-200 pt-6">
+                    <Link to="/">
+                    <button
+                       type="button"
+                       className="rounded-md border mr-2 border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                       >
+                        Back to shop
+                      </button>
+                      </Link>
                       <button
                         type="button"
                         className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
