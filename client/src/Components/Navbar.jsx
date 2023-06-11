@@ -51,6 +51,7 @@ const handleLogout = () => {
             className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
           >
             <FaShoppingCart size={20}/>
+           
             <span className='ml-2'>Cart</span>  
           </button>
           </Link>
