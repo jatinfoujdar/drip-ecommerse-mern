@@ -132,3 +132,6 @@ export const furnitureData = [
         tagline: 'Furn Central & more' 
     },
 ];
+
+
+
