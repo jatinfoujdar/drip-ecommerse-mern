@@ -8,3 +8,5 @@ const fetchProducts = () => {
         .catch(error => reject(error));
     });
   };
+
+
