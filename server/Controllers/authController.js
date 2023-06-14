@@ -15,28 +15,40 @@ export const cookieOptions = {
  params:= name, email, password
  details:= new user
 */
-const signupUser = asyncHandler(async(req,res) => {
-    const {name,email,password} = req.body
+const signupUser = asyncHandler(async (req, res) => {
+  const { name, email, password } = req.body;
 
-    if(!name || !email || !password){
-      throw new CustomError("please fill all the fields",400)
-    }
-    const existingUser = awaitUser.findOne({email})
-     
-    if(existingUser){
-      throw new CustomError("User already exists",400)
-    }
+  if (!name || !email || !password) {
+    throw new CustomError('Please fill all the fields', 400);
+  }
 
-    const user = await User.create({
-      name,
-      email,
-      password
-    });
+  const existingUser = await User.findOne({ email });
 
-    const Token = user.getJwtToken()
-    console.log(user);
-    user.password = undefined;
-})
+  if (existingUser) {
+    throw new CustomError('User already exists', 400);
+  }
+
+  const user = await User.create({
+    name,
+    email,
+    password,
+  });
+
+  const token = user.getJwtToken();
+  user.password = undefined;
+
+  res.status(201).json({
+    success: true,
+    message: 'User registered successfully',
+    data: {
+      user,
+      token,
+    },
+  });
+});
+
+export default signupUser;
+
 
 
 // Register a new user
