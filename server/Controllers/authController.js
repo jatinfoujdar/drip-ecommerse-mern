@@ -1,15 +1,54 @@
 import User from "../Models/userSchema.js";
+import asyncHandler from "../Services/asyncHandler.js";
+import CustomError from "../utils/customError.js";
+
+
+
+export const cookieOptions = {
+  expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+  httpOnly: true,
+}
+
+/*
+ @signupUser
+ route := http://localhost:4000/api/v1/signup
+ params:= name, email, password
+ details:= new user
+*/
+const signupUser = asyncHandler(async(req,res) => {
+    const {name,email,password} = req.body
+
+    if(!name || !email || !password){
+      throw new CustomError("please fill all the fields",400)
+    }
+    const existingUser = awaitUser.findOne({email})
+     
+    if(existingUser){
+      throw new CustomError("User already exists",400)
+    }
+
+    const user = await User.create({
+      name,
+      email,
+      password
+    });
+
+    const Token = user.getJwtToken()
+    console.log(user);
+    user.password = undefined;
+})
+
 
 // Register a new user
-const signupUser = async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
-    const user = await User.create({ name, email, password });
-    res.status(201).json({ user });
-  } catch (error) {
-    res.status(500).json({ error: "Failed to register user" });
-  }
-};
+// const signupUser = async (req, res) => {
+//   try {
+//     const { name, email, password } = req.body;
+//     const user = await User.create({ name, email, password });
+//     res.status(201).json({ user });
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to register user" });
+//   }
+// };
 
 // Login user
 
