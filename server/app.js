@@ -1,4 +1,6 @@
-import express from "express"
+import express from "express";
+import morgan from "morgan";
+import cors from "cors";
 const PORT = process.env.PORT || 4000;
 import authRoutes from "./Routes/authRoutes.js";
 import Connection from "./Config/database.js";
