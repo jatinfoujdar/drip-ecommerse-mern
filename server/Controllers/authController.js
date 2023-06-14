@@ -84,30 +84,21 @@ const loginUser = asyncHandler(async (req, res) => {
   });
 });
 
+/*
+ @logoutUser
+ route := http://localhost:4000/api/v1/logout
+ params:=  
+ details:= success message
+*/
+const logoutUser = asyncHandler(async (req, res) => {
+  // Clear the token cookie by setting it to an empty value and an expired date
+  res.cookie('token', '', { expires: new Date(0) });
 
-
-
-
-//logout
- const logoutUser = async (req, res) => {
-  try {
- 
-    // Remove tokens from the user (if you're using tokens)
-    const user = req.user;
-    user.tokens = [];
-
-    // Save the user with updated tokens
-    await user.save();
-
-    res.status(200).json({
-      success: true,
-      message: "Logged out successfully"
-    });
-  } catch (error) {
-    res.status(500).json({ error: "Failed to logout user" });
-  }
-};
-
+  res.status(200).json({
+    success: true,
+    message: 'User logged out successfully',
+  });
+});
 
 
 export { signupUser, loginUser , logoutUser};
