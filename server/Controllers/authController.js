@@ -37,12 +37,15 @@ const signupUser = asyncHandler(async (req, res) => {
   const token = user.getJwtToken();
   user.password = undefined;
 
+  res.cookie("token",token,cookieOptions)
+
   res.status(201).json({
     success: true,
     message: 'User registered successfully',
     data: {
       user,
       token,
+      user
     },
   });
 });
@@ -53,6 +56,7 @@ const signupUser = asyncHandler(async (req, res) => {
  params:=  email, password
  details:= new user
 */
+
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -75,6 +79,7 @@ const loginUser = asyncHandler(async (req, res) => {
     data: {
       user,
       token,
+      user
     },
   });
 });
