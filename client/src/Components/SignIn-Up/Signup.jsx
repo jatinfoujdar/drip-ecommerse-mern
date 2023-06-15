@@ -1,25 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import axios from "axios";
-import { ToastContainer, toast} from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-
-  const[name, setName] = useState("");
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
-  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
 
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/v1/signup', { name, email, password });
   
-      if (response.status === 200) {
+      if (response.status === 201) {
         navigate("/login");
-        toast.success("Signup Successful"); // Display success toast
+        toast.success("Signup Successful");
+        
       }
     } catch (error) {
       toast.error("Invalid Credentials");
@@ -27,6 +25,7 @@ const Signup = () => {
     }
   };
 
+ 
 
   return (
     <>

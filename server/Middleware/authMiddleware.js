@@ -7,9 +7,6 @@ import config from "../Config/index.js"
 
 export const isLoggedIn = asyncHandler(async(req , _res, next)=>{
     let token;
-
-
-
     if (
         req.cookies.token || 
         (req.headers.authorization && req.headers.authorization.startsWith("Bearer"))

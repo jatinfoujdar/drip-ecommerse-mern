@@ -18,7 +18,7 @@ const Login = () => {
     
       if (response.status === 200) {
         navigate("/");
-        alert("Register Successful")
+        toast.success("login Successful");
     }
     } catch (error) {
       toast.error("Something went wrong")
