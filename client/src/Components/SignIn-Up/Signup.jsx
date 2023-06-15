@@ -16,14 +16,13 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/v1/signup', { name, email, password });
-      // console.log(response.data);
-
+  
       if (response.status === 200) {
         navigate("/login");
-        alert("Register Successful")
-    }
+        toast.success("Signup Successful"); // Display success toast
+      }
     } catch (error) {
-      toast.error("Invalid Credincials")
+      toast.error("Invalid Credentials");
       console.error(error.response.data);
     }
   };
