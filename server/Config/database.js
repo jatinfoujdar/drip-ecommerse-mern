@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import config from "./index.js";
 
 
 export const Connection = async()=>{
-    const URL = "mongodb+srv://jatinfoujdar:jatinfoujdar1234@e-commerse.1dtnhmu.mongodb.net/?retryWrites=true&w=majority"
+    const URL = process.env.MONGODB_URL
     try {
         await mongoose.connect(URL,
             
