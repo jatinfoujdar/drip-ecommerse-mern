@@ -17,8 +17,9 @@ const Login = () => {
       const response = await axios.post('/api/v1/login', {  email, password  });
     
       if (response.status === 200) {
-        navigate("/");
         toast.success("login Successful");
+        navigate("/");
+       
     }
     } catch (error) {
       toast.error("Something went wrong")
