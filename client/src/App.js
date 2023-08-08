@@ -28,8 +28,6 @@ function App() {
   );
 }
 
-// const RestrictedComponent = () => {
-//   return <h1>Restricted Component - Only accessible if logged in</h1>;
-// };
+
 
 export default App;
